@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>FA14</title>
+  <style>
+    *{
+      color:white;
+    }
+    fieldset {
+      width: 30%;
+      margin: auto;
+      border: none;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(2, 2, 2, 2.19);
+    }
+
+    legend {
+      color: whitesmoke;
+    }
+
+    h1 {
+      margin: 5px;
+    }
+
+    body {
+      background-image: url("IMG_20220806_171152.jpg");
+      background-size: cover;
+    }
+    
+    input, textarea{
+      color:black;
+      border-color: white;
+      border: solid;
+      border-width:2px;
+    }
+    #btn1{
+      background-color: black;
+      color:white;
+    }
+    #information{
+      width:50%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #output1{
+      width:30%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      margin: auto;
+    }
+    #gender{
+      color:black;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>
+        <h1>Personal Information</h1>
+      </legend>
+      <br>
+      <label for="name"> Full Name: </label>
+      <input type="text" id="name" name="name" onclick="redGreen()" onblur="redGreen()">
+      <br>
+      <br>
+      <br>
+      <label for="usrname"> Username: </label>
+      <input type="text" id="usrname" name="usrname" onclick="redGreen()" onblur="redGreen()">
+      <br>
+      <br>
+      <br>
+      <label for="gender">Gender: </label>
+      <select name="gender" id="gender">
+      <option id="gender" value="Male">Male</option>
+      <option id="gender" value="Female">Female</option>
+      <option id="gender" value="Prefer not to mention">Prefer not to mention </option>
+  </select>
+      <br>
+      <br>
+      <br>
+      <label for="emailad"> Email Address: </label>
+      <input type="email" id="emailad" name="emailad" onclick="redGreen()" onblur="redGreen()">
+      <br>
+      <br>
+      <br>
+      <label for="pwd"> Password: </label>
+      <input type="password" id="pwd" name="pwd" onclick="redGreen()" onblur="redGreen()">
+      <br>
+      <br>
+      <br>
+      <p> Address: </p>
+      <textarea id="address" name="address" rows="4" cols="50" onclick="redGreen()" onblur="redGreen()"></textarea>
+      <br>
+      <br>
+      <br>
+      <p> Interest(s): </p>
+      <textarea id="interest" name="interest" rows="4" cols="50" onclick="redGreen()" onblur="redGreen()"></textarea>
+      <br>
+      <br>
+      <br>
+      <input type="reset">
+      <input type="button" id="btn1" value="Submit">
+    </fieldset>
+  </form>
+
+  <div class="output" id="output1"></div>
+
+
+  <script>
+    const txt1 = document.getElementById("name");
+    const txt2 = document.getElementById("usrname");
+    const txt3 = document.getElementById("emailad");
+    const txt4 = document.getElementById("pwd");
+    const txt5 = document.getElementById("address");
+    const txt6 = document.getElementById("interest");
+    const btn1 = document.getElementById("btn1");
+    const out1 = document.getElementById("output1");
+
+    function output() {
+      out1.innerHTML = "Name: " + txt1.value + "</br>" + "</br>" + "Username: " + txt2.value + "</br>" + "</br>" + "Email Address: " + txt3.value + "</br>" + "</br>" + "Password: " + txt4.value + "</br>" + "</br>" + "Address: " + txt5.value + "</br>" + "</br>" + "Interest: " + txt6.value;
+    }
+
+    btn1.addEventListener('click', output);
+
+
+    function redGreen() {
+      if (txt1.value == "") {
+        document.getElementById("name").style.borderColor = "red";
+      } else {
+        document.getElementById("name").style.borderColor = "rgb(0, 102, 0)";
+      }
+      if (txt2.value == "") {
+        document.getElementById("usrname").style.borderColor = "red";
+      } else {
+        document.getElementById("usrname").style.borderColor = "rgb(0, 102, 0)";
+      }
+      if (txt3.value == "") {
+        document.getElementById("emailad").style.borderColor = "red";
+      } else {
+        document.getElementById("emailad").style.borderColor = "rgb(0, 102, 0)";
+      }
+      if (txt4.value == "") {
+        document.getElementById("pwd").style.borderColor = "red";
+      } else {
+        document.getElementById("pwd").style.borderColor = "rgb(0, 102, 0)";
+      }
+      if (txt5.value == "") {
+        document.getElementById("address").style.borderColor = "red";
+      } else {
+        document.getElementById("address").style.borderColor = "rgb(0, 102, 0)";
+      }
+      if (txt6.value == "") {
+        document.getElementById("interest").style.borderColor = "red";
+      } else {
+        document.getElementById("interest").style.borderColor = "rgb(0, 102, 0)";
+      }
+    }
+
+  </script>
+</body>
+
+</html>
